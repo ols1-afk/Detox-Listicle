@@ -45,7 +45,8 @@ function Figure({ image }: { image: ListicleImage }) {
         alt={image.alt}
         width={image.width}
         height={image.height}
-        loading="lazy"
+        loading={image.priority ? "eager" : "lazy"}
+        fetchPriority={image.priority ? "high" : undefined}
         decoding="async"
       />
       {image.caption ? <figcaption>{image.caption}</figcaption> : null}

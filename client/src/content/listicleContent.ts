@@ -14,6 +14,12 @@ export type ListicleImage = {
   height: number;
   /** Shown under the image when the visual is illustrative rather than photographic. */
   caption?: string;
+  /**
+   * Set for above-the-fold artwork. Such an image is the page's Largest
+   * Contentful Paint element, so lazy-loading it delays the very thing the
+   * visitor is waiting for.
+   */
+  priority?: boolean;
 };
 
 export type GradeComparison = {
@@ -42,10 +48,13 @@ export const hero = {
     "Doing everything right and the middle still won't budge? Whether the diets stopped working or the weight came straight back after the shots, here's why thousands of women are switching to DetoxMe.",
   cta: "Save Up To 70% OFF",
   socialProof: "10,000+ Reviews | 100,000+ Happy Customers",
-  // TODO: supply the hero photograph (woman 45-55 in her kitchen holding the
-  // bottle, natural light, relaxed). The hero is designed to read correctly
-  // without it, so the page ships either way.
-  image: undefined as ListicleImage | undefined,
+  image: {
+    src: "/images/hero-kitchen.webp",
+    alt: "A woman in her forties standing in a bright kitchen, smiling and holding a bottle of DetoxMe High Absorption Chitosan.",
+    width: 1402,
+    height: 1122,
+    priority: true,
+  } as ListicleImage | undefined,
 };
 
 export const reasons: Reason[] = [
@@ -177,8 +186,12 @@ export const offer = {
   heading: "Clearing The Belly Made Simple",
   body:
     "Pharmaceutical-grade chitosan at 90%+ deacetylation, clinical dose, two capsules each morning. To clear the particles, stop the chemicals seeping in, and let the switch finally settle. Especially if you're over 40 and nothing else has worked.",
-  // TODO: supply the product photograph for this block.
-  image: undefined as ListicleImage | undefined,
+  image: {
+    src: "/images/product-badges.webp",
+    alt: "A bottle of DetoxMe High Absorption Chitosan, 1,200mg per serving, 60 capsules, alongside its four guarantees: shellfish-sourced premium marine-grade chitosan, third-party tested for purity and potency, 100% stimulant-free and non-habit forming, and a 90-day money-back guarantee.",
+    width: 1536,
+    height: 1024,
+  } as ListicleImage | undefined,
   deal: "Buy 2 Get 1 Free For A Limited Time Only!",
   urgency: "This limited-time deal is in high demand and stock keeps selling out.",
   cta: "Save Up To 70% OFF",

@@ -55,16 +55,21 @@ To change the page:
 - **Layout and styling** — `pages/Home.css`. Mobile-first: the single-column
   layout is the real design and the `48rem` breakpoint only relaxes it.
 
-### Images still to supply
+### Images
 
-| Where              | Needed                                                       |
-| ------------------ | ------------------------------------------------------------ |
-| Hero               | Woman 45-55 in her kitchen holding the bottle, natural light  |
-| Reason 04          | Woman mid-afternoon, energised, out walking                   |
-| Offer block        | Product shot for the closing offer                            |
+Six of the seven are in place. One is still outstanding:
+
+| Where     | Needed                                      |
+| --------- | ------------------------------------------- |
+| Reason 04 | Woman mid-afternoon, energised, out walking |
 
 Reason 05's "fat blocker vs pharmaceutical grade" panel is rendered as markup
 rather than an image, so it stays sharp at any size and reads to screen readers.
+
+Set `priority: true` on an image that sits above the fold. The hero uses it, so
+it loads eagerly at high fetch priority instead of being lazy-loaded: it is the
+Largest Contentful Paint element, and lazy-loading it would delay the very thing
+the visitor is waiting for. Everything below the fold stays lazy.
 
 ## Deploying
 

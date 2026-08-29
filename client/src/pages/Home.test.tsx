@@ -2,7 +2,7 @@
 
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { PRODUCT_URL, reasons, reviews } from "@/content/listicleContent";
+import { hero, offer, PRODUCT_URL, reasons, reviews } from "@/content/listicleContent";
 import Home from "./Home";
 
 afterEach(cleanup);
@@ -40,15 +40,34 @@ describe("DetoxMe listicle landing page", () => {
     const { container } = render(<Home />);
     const images = Array.from(container.querySelectorAll("img"));
 
-    // Only the reasons that currently have artwork; the rest render text-only
-    // until their images are supplied.
-    expect(images).toHaveLength(reasons.filter((reason) => reason.image).length);
+    // The hero, the offer shot, and every reason that has artwork. Reasons
+    // without an image render text-only until one is supplied.
+    const expected =
+      reasons.filter((reason) => reason.image).length +
+      (hero.image ? 1 : 0) +
+      (offer.image ? 1 : 0);
+    expect(images).toHaveLength(expected);
 
     for (const image of images) {
       expect(image.getAttribute("alt")?.length ?? 0).toBeGreaterThan(20);
       expect(image.getAttribute("width")).toBeTruthy();
       expect(image.getAttribute("height")).toBeTruthy();
+    }
+  });
+
+  it("loads the hero eagerly and everything below it lazily", () => {
+    const { container } = render(<Home />);
+    const images = Array.from(container.querySelectorAll("img"));
+    const [first, ...rest] = images;
+
+    // The hero is the Largest Contentful Paint element; lazy-loading it would
+    // delay the thing the visitor is actually waiting for.
+    expect(first.getAttribute("loading")).toBe("eager");
+    expect(first.getAttribute("fetchpriority")).toBe("high");
+
+    for (const image of rest) {
       expect(image.getAttribute("loading")).toBe("lazy");
+      expect(image.getAttribute("fetchpriority")).toBeNull();
     }
   });
 
