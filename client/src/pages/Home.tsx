@@ -125,9 +125,9 @@ export default function Home() {
 
       <main>
         <section className="lp-hero">
-          {hero.image ? <Figure image={hero.image} /> : null}
           <h1>{hero.headline}</h1>
           <p className="lp-hero-sub">{hero.subheadline}</p>
+          {hero.image ? <Figure image={hero.image} /> : null}
           <p className="lp-hero-body">{hero.body}</p>
           <Cta label={hero.cta} className="lp-cta-lg" />
           <p className="lp-social-proof">

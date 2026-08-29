@@ -81,6 +81,12 @@
   text-wrap: pretty;
 }
 
+/* The hero image sits below the headline and subheadline, so it needs space
+   above it as well as below. */
+.lp-hero .lp-figure {
+  margin-top: 1.35rem;
+}
+
 .lp-social-proof {
   align-items: center;
   color: var(--lp-muted);

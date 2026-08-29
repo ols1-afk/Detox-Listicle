@@ -57,13 +57,7 @@ To change the page:
 
 ### Images
 
-Six of the seven are in place. One is still outstanding:
-
-| Where     | Needed                                      |
-| --------- | ------------------------------------------- |
-| Reason 04 | Woman mid-afternoon, energised, out walking |
-
-Reason 05's "fat blocker vs pharmaceutical grade" panel is rendered as markup
+All artwork is in place. Reason 05's "fat blocker vs pharmaceutical grade" panel is rendered as markup
 rather than an image, so it stays sharp at any size and reads to screen readers.
 
 Set `priority: true` on an image that sits above the fold. The hero uses it, so

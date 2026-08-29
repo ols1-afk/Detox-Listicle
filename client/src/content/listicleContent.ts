@@ -113,7 +113,12 @@ export const reasons: Reason[] = [
     eyebrow: "Steady Energy",
     number: "04",
     headline: "End The 3pm Crash That Sleep Doesn't Fix",
-    // TODO: supply the image (woman mid-afternoon, energised, out walking).
+    image: {
+      src: "/images/steady-energy.webp",
+      alt: "A woman walking outdoors in the afternoon sunlight, beside a list of DetoxMe benefits: steady energy, clearer focus, a happy gut, healthy weight and natural detox.",
+      width: 1254,
+      height: 1254,
+    },
     body: [
       "Cortisol is supposed to fall through the afternoon. When something keeps it elevated all day, the natural rhythm flattens out, which is why eight hours of sleep still leaves you flat by three.",
       "With the particles cleared and nothing driving the switch, cortisol follows the pattern it's meant to, and the afternoon stops being something to get through.",
