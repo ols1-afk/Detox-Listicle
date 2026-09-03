@@ -59,20 +59,21 @@ export const hero = {
 
 export const reasons: Reason[] = [
   {
-    id: "cortisol-switch",
-    eyebrow: "The Cortisol Switch",
+    id: "obesogens",
+    eyebrow: "Obesogens",
     number: "01",
-    headline: "Shut Off The Signal Telling Belly Fat To Stay Put",
+    headline: "Clear The Chemicals That Build Fat Cells Without Asking",
     image: {
-      src: "/images/cortisol-switch.webp",
-      alt: "Two-panel diagram. Left: microplastic particles lodged in the gut lining with chemicals leaching out and the cortisol switch on. Right: chitosan capturing the particles with the cortisol switch off.",
-      width: 1536,
+      src: "/images/obesogens.webp",
+      alt: "Diagram titled: what are microplastics doing to your weight? Three panels show plastic chemicals creating new fat cells, making existing fat cells bigger, and interfering with the hunger signal between the gut and the brain.",
+      width: 1024,
       height: 1024,
       caption: "Conceptual mechanism illustration.",
     },
     body: [
-      "Belly fat isn't like the rest of your body. It makes its own cortisol, right there in the tissue, using an enzyme called 11β-HSD1. And cortisol is the hormone that tells fat to stay exactly where it is.",
-      "Microplastic particles get caught in the gut lining, and the chemicals seeping out of them drive that enzyme harder. DetoxMe binds those particles and carries them out before they're absorbed, so nothing is left driving the switch.",
+      "Researchers have a name for the chemicals that leach out of everyday plastic. They call them obesogens, and what defines them is that they push the body to store fat without a single change in what is being eaten.",
+      "They work in three ways. They signal the body to build new fat cells it never needed. They block the fat-burning signals in the cells already there, so those cells fill instead of emptying. And they interfere with the message that says you are full, so hunger keeps going long after a meal has finished.",
+      "Which is how the scale can sit still while everything on paper looks right. DetoxMe binds the plastic particles these chemicals leach from and carries them out before they are absorbed, so the load stops arriving in the first place.",
     ],
   },
   {
@@ -120,8 +121,8 @@ export const reasons: Reason[] = [
       height: 1254,
     },
     body: [
-      "Cortisol is supposed to fall through the afternoon. When something keeps it elevated all day, the natural rhythm flattens out, which is why eight hours of sleep still leaves you flat by three.",
-      "With the particles cleared and nothing driving the switch, cortisol follows the pattern it's meant to, and the afternoon stops being something to get through.",
+      "Cortisol is supposed to fall through the afternoon. When these chemicals keep it elevated all day, the natural rhythm flattens out, which is why eight hours of sleep still leaves you flat by three.",
+      "With the particles cleared and nothing left keeping it elevated, cortisol follows the pattern it's meant to, and the afternoon stops being something to get through.",
     ],
   },
   {
@@ -153,8 +154,8 @@ export const reasons: Reason[] = [
       caption: "Conceptual illustration. Not based on direct clinical data.",
     },
     body: [
-      "Estrogen kept that enzyme quiet for twenty years without you ever knowing it was there. As estrogen drops, that protection fades. And it fades at the exact moment plastic production has gone from 2 million tonnes a year to over 400 million.",
-      "So the chemicals driving the enzyme up are arriving in higher volume than ever, right as the thing keeping it in check disappears. Nothing about your habits changed, which is why the same diet that worked at 32 does nothing at 47.",
+      "Estrogen held these chemicals off for twenty years without you ever knowing it was doing it. As estrogen drops, that protection fades. And it fades at the exact moment plastic production has gone from 2 million tonnes a year to over 400 million.",
+      "So the obesogens are arriving in higher volume than ever, right as the thing holding them off disappears. Nothing about your habits changed, which is why the same diet that worked at 32 does nothing at 47.",
     ],
   },
   {
