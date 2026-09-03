@@ -57,8 +57,14 @@ To change the page:
 
 ### Images
 
-All artwork is in place. Reason 05's "fat blocker vs pharmaceutical grade" panel is rendered as markup
-rather than an image, so it stays sharp at any size and reads to screen readers.
+Five of the seven reasons have artwork. Reasons 04 and 05 are specified as
+animations that have not been produced yet, so they render text-only until the
+files arrive:
+
+| Where     | Needed                                                                                                     |
+| --------- | ---------------------------------------------------------------------------------------------------------- |
+| Reason 04 | Stem cell, chemical wedge arrives, cell divides into fat cells, gate marked IN opens while gate marked OUT locks |
+| Reason 05 | Stomach signals the brain, brain lights up FULL, then chemicals block the receptor and the next signal bounces |
 
 Set `priority: true` on an image that sits above the fold. The hero uses it, so
 it loads eagerly at high fetch priority instead of being lazy-loaded: it is the

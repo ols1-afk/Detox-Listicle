@@ -13,7 +13,7 @@ import {
   type ListicleImage,
   type Reason,
 } from "@/content/listicleContent";
-import { Check, ShieldCheck, Star, X } from "lucide-react";
+import { Check, ShieldCheck, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 import "./Home.css";
 
@@ -67,25 +67,6 @@ function ReasonBlock({ reason }: { reason: Reason }) {
       <h2 id={`${reason.id}-heading`}>{reason.headline}</h2>
 
       {reason.image ? <Figure image={reason.image} /> : null}
-
-      {reason.comparison ? (
-        <div className="lp-compare">
-          <div className="lp-compare-card is-reject">
-            <span className="lp-compare-icon">
-              <X aria-hidden="true" />
-            </span>
-            <strong>{reason.comparison.reject.label}</strong>
-            <span>{reason.comparison.reject.detail}</span>
-          </div>
-          <div className="lp-compare-card is-accept">
-            <span className="lp-compare-icon">
-              <Check aria-hidden="true" />
-            </span>
-            <strong>{reason.comparison.accept.label}</strong>
-            <span>{reason.comparison.accept.detail}</span>
-          </div>
-        </div>
-      ) : null}
 
       {reason.body.map((paragraph) => (
         <p key={paragraph.slice(0, 48)}>{paragraph}</p>
@@ -144,7 +125,9 @@ export default function Home() {
 
         <section className="lp-offer" aria-labelledby="offer-heading">
           <h2 id="offer-heading">{offer.heading}</h2>
-          <p>{offer.body}</p>
+          {offer.body.map((paragraph) => (
+            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+          ))}
 
           {offer.image ? <Figure image={offer.image} /> : null}
 
@@ -158,13 +141,7 @@ export default function Home() {
           </ul>
 
           <p className="lp-deal">{offer.deal}</p>
-          <p className="lp-urgency">{offer.urgency}</p>
           <Cta label={offer.cta} className="lp-cta-lg" />
-          <p className="lp-offer-meta">
-            {offer.meta.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-          </p>
           <p className="lp-guarantee">{offer.guarantee}</p>
         </section>
 

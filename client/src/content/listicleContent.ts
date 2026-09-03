@@ -22,11 +22,6 @@ export type ListicleImage = {
   priority?: boolean;
 };
 
-export type GradeComparison = {
-  reject: { label: string; detail: string };
-  accept: { label: string; detail: string };
-};
-
 export type Reason = {
   id: string;
   eyebrow: string;
@@ -34,7 +29,6 @@ export type Reason = {
   headline: string;
   image?: ListicleImage;
   body: string[];
-  comparison?: GradeComparison;
   stats?: { value: string; label: string }[];
   closing?: string;
 };
@@ -59,10 +53,10 @@ export const hero = {
 
 export const reasons: Reason[] = [
   {
-    id: "obesogens",
-    eyebrow: "Obesogens",
+    id: "obesogen-problem",
+    eyebrow: "The Obesogen Problem",
     number: "01",
-    headline: "Clear The Chemicals That Build Fat Cells Without Asking",
+    headline: "The Chemicals In Plastic Are Driving The Pooch",
     image: {
       src: "/images/obesogens.webp",
       alt: "Diagram titled: what are microplastics doing to your weight? Three panels show plastic chemicals creating new fat cells, making existing fat cells bigger, and interfering with the hunger signal between the gut and the brain.",
@@ -71,81 +65,16 @@ export const reasons: Reason[] = [
       caption: "Conceptual mechanism illustration.",
     },
     body: [
-      "Researchers have a name for the chemicals that leach out of everyday plastic. They call them obesogens, and what defines them is that they push the body to store fat without a single change in what is being eaten.",
-      "They work in three ways. They signal the body to build new fat cells it never needed. They block the fat-burning signals in the cells already there, so those cells fill instead of emptying. And they interfere with the message that says you are full, so hunger keeps going long after a meal has finished.",
-      "Which is how the scale can sit still while everything on paper looks right. DetoxMe binds the plastic particles these chemicals leach from and carries them out before they are absorbed, so the load stops arriving in the first place.",
-    ],
-  },
-  {
-    id: "magnetic-binding",
-    eyebrow: "Magnetic Binding",
-    number: "02",
-    headline: "Pull The Particles Out Instead Of Just Avoiding More",
-    image: {
-      src: "/images/chitosan-beakers.webp",
-      alt: "Side-by-side beakers. Left: cloudy water with microplastic particles suspended. Right: clear water with the particles bound into clumps settled at the bottom.",
-      width: 1536,
-      height: 1024,
-      caption: "Conceptual illustration of binding.",
-    },
-    body: [
-      "Switching to glass and filtering the water changes what arrives tomorrow. It does nothing about what's already lodged in your gut lining, seeping into you every day.",
-      "Chitosan is one of the only fibres in nature carrying a positive charge, and microplastics carry a negative one. So it snaps onto them like a magnet, wraps them in a soft gel, and rolls through collecting more until the whole thing is far too big to be absorbed. Then it leaves in your stool.",
-    ],
-  },
-  {
-    id: "hormone-defence",
-    eyebrow: "Hormone Defence",
-    number: "03",
-    headline: "Stop The Chemicals That Mimic Your Own Estrogen",
-    image: {
-      src: "/images/everyday-exposure.webp",
-      alt: "Everyday kitchen scene highlighting takeaway containers, plastic food storage, a plastic chopping board, kitchen utensils, bottled water and plastic bowls as sources of microplastic exposure.",
-      width: 1536,
-      height: 1024,
-    },
-    body: [
-      "The chemicals leaching from plastic are called phthalates and BPA, and they're shaped so closely to estrogen that your receptors can't tell them apart. Which lands hardest in your forties, right when your own estrogen is dropping and there's less of it competing.",
-      "DetoxMe catches the particles in the gut before any of it reaches your bloodstream, so the interference stops at the door rather than being managed after the fact.",
-    ],
-  },
-  {
-    id: "steady-energy",
-    eyebrow: "Steady Energy",
-    number: "04",
-    headline: "End The 3pm Crash That Sleep Doesn't Fix",
-    image: {
-      src: "/images/steady-energy.webp",
-      alt: "A woman walking outdoors in the afternoon sunlight, beside a list of DetoxMe benefits: steady energy, clearer focus, a happy gut, healthy weight and natural detox.",
-      width: 1254,
-      height: 1254,
-    },
-    body: [
-      "Cortisol is supposed to fall through the afternoon. When these chemicals keep it elevated all day, the natural rhythm flattens out, which is why eight hours of sleep still leaves you flat by three.",
-      "With the particles cleared and nothing left keeping it elevated, cortisol follows the pattern it's meant to, and the afternoon stops being something to get through.",
-    ],
-  },
-  {
-    id: "pharmaceutical-grade",
-    eyebrow: "Authentic Pharmaceutical Grade",
-    number: "05",
-    headline: 'Not "Cheap Fat Blocker" Like The Amazon Brands',
-    // Rendered as markup rather than an image: it stays sharp at any size,
-    // reads to screen readers, and needs no asset.
-    comparison: {
-      reject: { label: "Fat Blocker Grade", detail: "50-70% deacetylation" },
-      accept: { label: "Pharmaceutical Grade", detail: "90%+ deacetylation" },
-    },
-    body: [
-      "Most chitosan sold online is fat-blocker grade at 50 to 70% deacetylation. That number decides how strong the positive charge is, and at that level the charge is far too weak to hold onto anything. It passes straight through without binding a single particle.",
-      "DetoxMe uses pharmaceutical-grade chitosan above 90% deacetylation, third-party tested. Which is the difference between chitosan that actually grips and chitosan that just sits in a capsule.",
+      "Researchers call them obesogens. And the name is exactly what it sounds like, because these chemicals push the body to store fat regardless of how many calories are eaten.",
+      "They're what make plastic soft or hard, but they don't stay in the plastic… They seep out of food packaging, water bottles, kitchen utensils, non-stick pans, even the plastic paint on the caps of glass bottles.",
+      "So the calories and diets were never the problem. It was what's quietly hijacking the hormones.",
     ],
   },
   {
     id: "perimenopause-factor",
     eyebrow: "The Perimenopause Factor",
-    number: "06",
-    headline: "Why This Started After 40 And Not Before",
+    number: "02",
+    headline: "But Why At 40 And Not Before",
     image: {
       src: "/images/estrogen-plastic-crossover.webp",
       alt: "Line graph showing estrogen levels falling with age while plastic exposure rises, the two lines crossing around age 40.",
@@ -154,8 +83,78 @@ export const reasons: Reason[] = [
       caption: "Conceptual illustration. Not based on direct clinical data.",
     },
     body: [
-      "Estrogen held these chemicals off for twenty years without you ever knowing it was doing it. As estrogen drops, that protection fades. And it fades at the exact moment plastic production has gone from 2 million tonnes a year to over 400 million.",
-      "So the obesogens are arriving in higher volume than ever, right as the thing holding them off disappears. Nothing about your habits changed, which is why the same diet that worked at 32 does nothing at 47.",
+      "We've all been exposed to plastic chemicals our entire lives.",
+      "But estrogen acts like a shield against these chemicals, by slotting into our natural receptors. So when estrogen falls, this shield thins and the nasty plastic chemicals can slot into the receptors estrogen used to connect to.",
+      "It's why the pooch seems to appear overnight, because the protection is gone.",
+    ],
+  },
+  {
+    id: "impossible-to-avoid",
+    eyebrow: "Impossible To Avoid",
+    number: "03",
+    headline: "The Careful Ones Test The Same As Everyone Else",
+    image: {
+      src: "/images/everyday-exposure.webp",
+      alt: "Everyday kitchen scene highlighting takeaway containers, plastic food storage, a plastic chopping board, kitchen utensils, bottled water and plastic bowls as sources of microplastic exposure.",
+      width: 1536,
+      height: 1024,
+    },
+    body: [
+      "June 2025 the French food safety agency tested drinks in glass bottles against the same drinks in plastic, expecting glass to come out cleaner.",
+      "But it didn't… Glass bottled cola, iced tea and beer came back at 100 particles per litre, five times higher than the plastic.",
+      "So it was never about being careful enough. These chemicals are in the air in the kitchen, in the dust on the counter and in the food before it's bought.",
+    ],
+  },
+  {
+    id: "fat-gate",
+    eyebrow: "The Fat Gate",
+    number: "04",
+    headline: "They Tell The Body To Build Fat Cells It Doesn't Need",
+    // TODO: supply the animation. A plain stem cell, a grey chemical wedge
+    // arriving, the cell dividing into fat cells, then a gate marked IN swinging
+    // open on each while a gate marked OUT locks shut.
+    body: [
+      "Normally the body only makes new fat cells when the existing ones are full.",
+      "But obesogens push stem cells into becoming fat cells regardless of what's being eaten. So the body has more fat cells to be filled in the first place.",
+      "And these chemicals slow the process that breaks stored fat back down for energy.",
+      "So it's like opening the fat floodgates to let it in but not letting it out.",
+      "And it's why the diets and exercise feel useless, because your fat cells are being chemically tricked.",
+    ],
+  },
+  {
+    id: "fullness-signal",
+    eyebrow: "The Fullness Signal",
+    number: "05",
+    headline: "The 11pm Pantry Trip Isn't Willpower",
+    // TODO: supply the animation. A stomach sending a signal up to a brain, the
+    // brain lighting up FULL, then grey chemicals blocking the receptor so the
+    // next signal bounces off.
+    body: [
+      "Leptin is the hormone that tells the brain you've had enough.",
+      "It's the reason someone can have their favourite snack put in front of them and feel almost sick looking at it. That's leptin doing its job.",
+      "But obesogens interfere with the brain reading that signal.",
+      "Which is why the pantry at eleven at night is a real thing that happens to women who ate a full dinner just hours earlier.",
+      "So it was never a discipline problem. It's a signal that got blocked on the way up.",
+    ],
+  },
+  {
+    id: "japan-study",
+    eyebrow: "The 2025 Japan Study",
+    number: "06",
+    headline: "Researchers Tested Everything",
+    image: {
+      src: "/images/chitosan-beakers.webp",
+      alt: "Side-by-side beakers. Left: cloudy water with microplastic particles suspended. Right: clear water with the particles bound into clumps settled at the bottom.",
+      width: 1536,
+      height: 1024,
+      caption: "Conceptual illustration of binding.",
+    },
+    body: [
+      "In 2025 a Japanese research team tested everything against these microplastic particles to try to remove the chemicals they leach.",
+      "The only solution was a natural fibre from shellfish called chitosan.",
+      "And it cleared 115.6%. More came out than had gone in, which means it was pulling out particles that were already sitting in the body.",
+      "And the reason is charge. Microplastic particles carry a negative one but chitosan carries a positive one, so it snaps onto them like a magnet.",
+      "Collecting more as it travels through the body until it's far too big to be absorbed and gets removed in the stool.",
     ],
   },
   {
@@ -169,7 +168,7 @@ export const reasons: Reason[] = [
       width: 1402,
       height: 1122,
     },
-    body: ["Real users, real results. Women who switched to DetoxMe report after 12 weeks:"],
+    body: ["Women who switched to DetoxMe report after 12 weeks:"],
     stats: [
       { value: "84%", label: "say the middle is no longer bigger at night than it was in the morning" },
       { value: "79%", label: "feel their clothes fitting differently" },
@@ -190,18 +189,18 @@ export const trustBadges = [
 
 export const offer = {
   heading: "Clearing The Belly Made Simple",
-  body:
-    "Pharmaceutical-grade chitosan at 90%+ deacetylation, clinical dose, two capsules each morning. To clear the particles, stop the chemicals seeping in, and let the switch finally settle. Especially if you're over 40 and nothing else has worked.",
+  body: [
+    "Chitosan at a studied dose, two capsules each morning with water. To catch the particles before they're absorbed, so the chemicals stop giving orders.",
+    "Especially if you're over 40 and nothing else has worked.",
+  ],
   image: {
     src: "/images/product-badges.webp",
     alt: "A bottle of DetoxMe High Absorption Chitosan, 1,200mg per serving, 60 capsules, alongside its four guarantees: shellfish-sourced premium marine-grade chitosan, third-party tested for purity and potency, 100% stimulant-free and non-habit forming, and a 90-day money-back guarantee.",
     width: 1536,
     height: 1024,
   } as ListicleImage | undefined,
-  deal: "Buy 2 Get 1 Free For A Limited Time Only!",
-  urgency: "This limited-time deal is in high demand and stock keeps selling out.",
+  deal: "Buy 2 Get 1 Free For A Limited Time Only",
   cta: "Save Up To 70% OFF",
-  meta: ["Sell-Out Risk: High", "Free E-Book"],
   guarantee: "Try it today with a 90-Day Money Back Guarantee",
 };
 

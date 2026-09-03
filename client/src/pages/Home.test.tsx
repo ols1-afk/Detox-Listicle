@@ -71,14 +71,22 @@ describe("DetoxMe listicle landing page", () => {
     }
   });
 
-  it("renders the deacetylation comparison as markup rather than an image", () => {
-    const { container } = render(<Home />);
+  it("renders every paragraph of every reason", () => {
+    render(<Home />);
 
-    expect(container.querySelectorAll(".lp-compare-card")).toHaveLength(2);
-    expect(screen.getByText("Fat Blocker Grade")).toBeTruthy();
-    expect(screen.getByText("50-70% deacetylation")).toBeTruthy();
-    expect(screen.getByText("Pharmaceutical Grade")).toBeTruthy();
-    expect(screen.getByText("90%+ deacetylation")).toBeTruthy();
+    for (const reason of reasons) {
+      for (const paragraph of reason.body) {
+        expect(screen.getByText(paragraph)).toBeTruthy();
+      }
+    }
+  });
+
+  it("renders both paragraphs of the offer block", () => {
+    render(<Home />);
+
+    for (const paragraph of offer.body) {
+      expect(screen.getByText(paragraph)).toBeTruthy();
+    }
   });
 
   it("renders the four outcome statistics in the social proof reason", () => {
@@ -95,6 +103,7 @@ describe("DetoxMe listicle landing page", () => {
     expect(container.querySelectorAll(".lp-badges li")).toHaveLength(4);
     expect(screen.getByText("90-Day Guarantee")).toBeTruthy();
     expect(screen.getByText("Try it today with a 90-Day Money Back Guarantee")).toBeTruthy();
+    expect(screen.getByText("Buy 2 Get 1 Free For A Limited Time Only")).toBeTruthy();
   });
 
   it("renders every review with an attributed name and verification badge", () => {
