@@ -40,10 +40,11 @@ describe("DetoxMe listicle landing page", () => {
     const { container } = render(<Home />);
     const images = Array.from(container.querySelectorAll("img"));
 
-    // The hero, the offer shot, and every reason that has artwork. Reasons
-    // without an image render text-only until one is supplied.
+    // The hero, the offer shot, every reason with artwork, and every review
+    // with a photograph. Entries without an image render text-only.
     const expected =
       reasons.filter((reason) => reason.image).length +
+      reviews.filter((review) => review.image).length +
       (hero.image ? 1 : 0) +
       (offer.image ? 1 : 0);
     expect(images).toHaveLength(expected);
@@ -115,6 +116,14 @@ describe("DetoxMe listicle landing page", () => {
       expect(screen.getByText(review.name)).toBeTruthy();
     }
     expect(screen.getByText("10,284 reviews")).toBeTruthy();
+
+    // Each review's photograph sits inside that review's own container.
+    for (const card of Array.from(container.querySelectorAll(".lp-review"))) {
+      expect(card.querySelectorAll(".lp-review-photo")).toHaveLength(1);
+    }
+    expect(container.querySelectorAll(".lp-review-photo")).toHaveLength(
+      reviews.filter((review) => review.image).length,
+    );
   });
 
   it("points every call to action at the product page", () => {

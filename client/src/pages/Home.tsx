@@ -151,16 +151,29 @@ export default function Home() {
           <div className="lp-review-list">
             {reviews.map((review) => (
               <article key={review.name} className="lp-review">
-                <Stars />
-                <h3>{review.title}</h3>
-                <p>{review.body}</p>
-                <footer>
-                  <strong>{review.name}</strong>
-                  <span className="lp-verified">
-                    <Check aria-hidden="true" />
-                    {review.badge}
-                  </span>
-                </footer>
+                {review.image ? (
+                  <img
+                    className="lp-review-photo"
+                    src={review.image.src}
+                    alt={review.image.alt}
+                    width={review.image.width}
+                    height={review.image.height}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : null}
+                <div className="lp-review-text">
+                  <Stars />
+                  <h3>{review.title}</h3>
+                  <p>{review.body}</p>
+                  <footer>
+                    <strong>{review.name}</strong>
+                    <span className="lp-verified">
+                      <Check aria-hidden="true" />
+                      {review.badge}
+                    </span>
+                  </footer>
+                </div>
               </article>
             ))}
           </div>

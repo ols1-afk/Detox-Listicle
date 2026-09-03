@@ -332,7 +332,31 @@
   background: #fff;
   border: 1px solid var(--lp-line);
   border-radius: 0.75rem;
+  display: grid;
+  gap: 1rem;
   padding: 1.15rem;
+}
+
+/*
+ * On a phone the photograph runs full width above the words. These are
+ * before-and-after pairs, so they are already two images side by side; shrinking
+ * one into a column beside the text would leave each half around 70px wide and
+ * throw away the proof the photo exists to carry. From 30rem up there is room
+ * to set it beside the review, which is where it belongs.
+ */
+.lp-review-photo {
+  border: 1px solid var(--lp-line);
+  border-radius: 0.5rem;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+@media (min-width: 30rem) {
+  .lp-review {
+    align-items: start;
+    grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+  }
 }
 
 .lp-review h3 {

@@ -217,6 +217,7 @@ export type Review = {
   body: string;
   name: string;
   badge: string;
+  image?: ListicleImage;
 };
 
 export const reviewsHeading = "Real Reviews From Women Who Finally Saw The Middle Move";
@@ -226,6 +227,12 @@ export const reviews: Review[] = [
     title: "Jeans I hadn't worn in three years",
     body:
       "I'd tried everything. Keto, calorie counting, even the shots and it all came back. Three months on this and the jeans I'd put away actually button. I don't know what took me so long.",
+    image: {
+      src: "/images/review-karen.jpg",
+      alt: "Karen's before and after side-view photographs, showing a reduction around the midsection.",
+      width: 1080,
+      height: 1080,
+    },
     name: "Karen M.",
     badge: "Verified Purchase",
   },
@@ -233,6 +240,12 @@ export const reviews: Review[] = [
     title: "Finally an explanation that made sense",
     body:
       "Nobody had ever explained why my belly changed overnight at 43 when nothing else did. The bit about estrogen keeping the enzyme quiet, and that protection fading right as the chemicals ramped up, was the first thing that actually clicked.",
+    image: {
+      src: "/images/review-diane.jpg",
+      alt: "Diane's before and after front-view photographs, showing a reduction around the midsection.",
+      width: 554,
+      height: 554,
+    },
     name: "Diane R.",
     badge: "Verified Buyer",
   },
@@ -240,6 +253,12 @@ export const reviews: Review[] = [
     title: "I'd bought chitosan before and felt nothing",
     body:
       "Turns out the one I had was the cheap fat-blocker kind. Switched to this and noticed a difference in about four weeks. Wish I'd known about the deacetylation number years ago.",
+    image: {
+      src: "/images/review-lisa.webp",
+      alt: "Lisa's before and after side-view photographs, showing a reduction around the midsection.",
+      width: 700,
+      height: 469,
+    },
     name: "Lisa P.",
     badge: "Verified Buyer",
   },

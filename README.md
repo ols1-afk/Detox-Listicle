@@ -61,6 +61,9 @@ Every section has artwork. Reasons 04 and 05 were specified as animations; they
 are currently static three-panel diagrams carrying the same beats, and swapping
 in a real animation later is a one-line change to the relevant entry.
 
+Each review can carry its own `image`, rendered inside that review's container:
+full width above the words on a phone, beside them from `30rem` up.
+
 Set `priority: true` on an image that sits above the fold. The hero uses it, so
 it loads eagerly at high fetch priority instead of being lazy-loaded: it is the
 Largest Contentful Paint element, and lazy-loading it would delay the very thing
