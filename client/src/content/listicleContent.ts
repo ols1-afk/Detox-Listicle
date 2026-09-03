@@ -112,8 +112,8 @@ export const reasons: Reason[] = [
     headline: "They Tell The Body To Build Fat Cells It Doesn't Need",
     image: {
       src: "/images/fat-gate.webp",
-      alt: "Three panels titled how obesogens make weight loss so hard. Obesogens turn stem cells into fat cells no matter what, they slow the fat-burning process, and fat gets in but cannot get out.",
-      width: 1536,
+      alt: "Three panels titled how obesogens make weight loss so hard. They turn stem cells into fat cells no matter what, they slow down the fat-burning process, and fat gets in but can't get out.",
+      width: 1535,
       height: 1024,
       caption: "Conceptual mechanism illustration.",
     },
