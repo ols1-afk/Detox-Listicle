@@ -57,14 +57,9 @@ To change the page:
 
 ### Images
 
-Five of the seven reasons have artwork. Reasons 04 and 05 are specified as
-animations that have not been produced yet, so they render text-only until the
-files arrive:
-
-| Where     | Needed                                                                                                     |
-| --------- | ---------------------------------------------------------------------------------------------------------- |
-| Reason 04 | Stem cell, chemical wedge arrives, cell divides into fat cells, gate marked IN opens while gate marked OUT locks |
-| Reason 05 | Stomach signals the brain, brain lights up FULL, then chemicals block the receptor and the next signal bounces |
+Every section has artwork. Reasons 04 and 05 were specified as animations; they
+are currently static three-panel diagrams carrying the same beats, and swapping
+in a real animation later is a one-line change to the relevant entry.
 
 Set `priority: true` on an image that sits above the fold. The hero uses it, so
 it loads eagerly at high fetch priority instead of being lazy-loaded: it is the

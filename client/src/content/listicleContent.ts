@@ -76,11 +76,11 @@ export const reasons: Reason[] = [
     number: "02",
     headline: "But Why At 40 And Not Before",
     image: {
-      src: "/images/estrogen-plastic-crossover.webp",
-      alt: "Line graph showing estrogen levels falling with age while plastic exposure rises, the two lines crossing around age 40.",
+      src: "/images/estrogen-receptors.webp",
+      alt: "Two-panel comparison. Left, pre-menopause with estrogen high: estrogen molecules bind to hormone receptors, supporting healthy metabolism, mood, sleep and energy. Right, menopause with estrogen low: obesogens mimic estrogen and bind to those same receptors, disrupting hormonal balance.",
       width: 1536,
       height: 1024,
-      caption: "Conceptual illustration. Not based on direct clinical data.",
+      caption: "Conceptual mechanism illustration.",
     },
     body: [
       "We've all been exposed to plastic chemicals our entire lives.",
@@ -110,9 +110,13 @@ export const reasons: Reason[] = [
     eyebrow: "The Fat Gate",
     number: "04",
     headline: "They Tell The Body To Build Fat Cells It Doesn't Need",
-    // TODO: supply the animation. A plain stem cell, a grey chemical wedge
-    // arriving, the cell dividing into fat cells, then a gate marked IN swinging
-    // open on each while a gate marked OUT locks shut.
+    image: {
+      src: "/images/fat-gate.webp",
+      alt: "Three panels titled how obesogens make weight loss so hard. Obesogens turn stem cells into fat cells no matter what, they slow the fat-burning process, and fat gets in but cannot get out.",
+      width: 1536,
+      height: 1024,
+      caption: "Conceptual mechanism illustration.",
+    },
     body: [
       "Normally the body only makes new fat cells when the existing ones are full.",
       "But obesogens push stem cells into becoming fat cells regardless of what's being eaten. So the body has more fat cells to be filled in the first place.",
@@ -126,9 +130,13 @@ export const reasons: Reason[] = [
     eyebrow: "The Fullness Signal",
     number: "05",
     headline: "The 11pm Pantry Trip Isn't Willpower",
-    // TODO: supply the animation. A stomach sending a signal up to a brain, the
-    // brain lighting up FULL, then grey chemicals blocking the receptor so the
-    // next signal bounces off.
+    image: {
+      src: "/images/fullness-signal.webp",
+      alt: "Three panels titled the 11pm pantry trip isn't willpower. Leptin sends the full signal to the brain, leptin does its job as a woman waves away snacks, then obesogens block the signal so it never arrives.",
+      width: 1536,
+      height: 1024,
+      caption: "Conceptual mechanism illustration.",
+    },
     body: [
       "Leptin is the hormone that tells the brain you've had enough.",
       "It's the reason someone can have their favourite snack put in front of them and feel almost sick looking at it. That's leptin doing its job.",
