@@ -25,7 +25,8 @@ export type ListicleImage = {
 export type Reason = {
   id: string;
   eyebrow: string;
-  number: string;
+  /** Absent on the unnumbered social proof block that follows the seven. */
+  number?: string;
   headline: string;
   image?: ListicleImage;
   body: string[];
@@ -92,7 +93,7 @@ export const reasons: Reason[] = [
     id: "impossible-to-avoid",
     eyebrow: "Impossible To Avoid",
     number: "03",
-    headline: "The Careful Ones Test The Same As Everyone Else",
+    headline: "Why Being Careful Isn't Enough",
     image: {
       src: "/images/everyday-exposure.webp",
       alt: "Everyday kitchen scene highlighting takeaway containers, plastic food storage, a plastic chopping board, kitchen utensils, bottled water and plastic bowls as sources of microplastic exposure.",
@@ -166,9 +167,25 @@ export const reasons: Reason[] = [
     ],
   },
   {
+    id: "the-results",
+    eyebrow: "The Results",
+    number: "07",
+    headline: "Results That Matter",
+    body: [
+      "Removing obesogens before they can absorb means fewer new fat cells, proper burning of existing stored fat and less cravings for unnecessary calories.",
+      "So the stubborn pooch finally shifts, the excess arm and thigh fat drops and you no longer find yourself in the pantry at 11pm.",
+      "Because finally the sneaky chemicals blocking progress are being flushed out before they have a chance to disrupt the body.",
+    ],
+  },
+];
+
+/**
+ * Social proof, shown after the seven numbered reasons rather than as one of
+ * them. It carries no number for that reason.
+ */
+export const lovedByThousands: Reason = {
     id: "loved-by-thousands",
     eyebrow: "Loved By Thousands",
-    number: "07",
     headline: "Trusted By Over 100,000 Women",
     image: {
       src: "/images/customer-grid.webp",
@@ -185,8 +202,7 @@ export const reasons: Reason[] = [
     ],
     closing:
       "With over 10,000 five-star reviews, DetoxMe is the choice for women who've done everything right and want to know why it stopped working.",
-  },
-];
+  };
 
 export const trustBadges = [
   "Shellfish-Sourced",

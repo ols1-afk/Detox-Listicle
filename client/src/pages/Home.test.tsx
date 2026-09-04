@@ -2,7 +2,7 @@
 
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { hero, offer, PRODUCT_URL, reasons, reviews } from "@/content/listicleContent";
+import { hero, lovedByThousands, offer, PRODUCT_URL, reasons, reviews } from "@/content/listicleContent";
 import Home from "./Home";
 
 afterEach(cleanup);
@@ -23,7 +23,7 @@ describe("DetoxMe listicle landing page", () => {
 
   it("renders all seven reasons in order, each numbered and headed", () => {
     const { container } = render(<Home />);
-    const blocks = Array.from(container.querySelectorAll(".lp-reason"));
+    const blocks = Array.from(container.querySelectorAll(".lp-reason:not(.lp-proof)"));
 
     expect(blocks).toHaveLength(7);
     expect(blocks.map((block) => block.id)).toEqual(reasons.map((reason) => reason.id));
@@ -45,6 +45,7 @@ describe("DetoxMe listicle landing page", () => {
     const expected =
       reasons.filter((reason) => reason.image).length +
       reviews.filter((review) => review.image).length +
+      (lovedByThousands.image ? 1 : 0) +
       (hero.image ? 1 : 0) +
       (offer.image ? 1 : 0);
     expect(images).toHaveLength(expected);
@@ -90,11 +91,19 @@ describe("DetoxMe listicle landing page", () => {
     }
   });
 
-  it("renders the four outcome statistics in the social proof reason", () => {
+  it("renders the four outcome statistics in the social proof block", () => {
     const { container } = render(<Home />);
-    const stats = Array.from(container.querySelectorAll(".lp-stats li strong"));
+    const proof = container.querySelector(".lp-proof");
 
-    expect(stats.map((stat) => stat.textContent)).toEqual(["84%", "79%", "76%", "71%"]);
+    expect(proof).toBeTruthy();
+    // The proof block follows the seven and carries no number of its own.
+    expect(proof?.querySelectorAll(".lp-reason-number")).toHaveLength(0);
+    expect(
+      Array.from(proof!.querySelectorAll(".lp-stats li strong")).map((s) => s.textContent),
+    ).toEqual(["84%", "79%", "76%", "71%"]);
+    for (const paragraph of lovedByThousands.body) {
+      expect(screen.getByText(paragraph)).toBeTruthy();
+    }
   });
 
   it("renders the offer block with its trust badges and guarantee", () => {

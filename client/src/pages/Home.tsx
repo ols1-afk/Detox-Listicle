@@ -3,6 +3,7 @@ import {
   brand,
   disclaimer,
   hero,
+  lovedByThousands,
   offer,
   PRODUCT_URL,
   reasons,
@@ -54,14 +55,20 @@ function Figure({ image }: { image: ListicleImage }) {
   );
 }
 
-function ReasonBlock({ reason }: { reason: Reason }) {
+function ReasonBlock({ reason, className = "" }: { reason: Reason; className?: string }) {
   return (
-    <section className="lp-reason" id={reason.id} aria-labelledby={`${reason.id}-heading`}>
+    <section
+      className={`lp-reason ${className}`.trim()}
+      id={reason.id}
+      aria-labelledby={`${reason.id}-heading`}
+    >
       <div className="lp-reason-eyebrow">
         <span>{reason.eyebrow}</span>
-        <span className="lp-reason-number" aria-hidden="true">
-          {reason.number}
-        </span>
+        {reason.number ? (
+          <span className="lp-reason-number" aria-hidden="true">
+            {reason.number}
+          </span>
+        ) : null}
       </div>
 
       <h2 id={`${reason.id}-heading`}>{reason.headline}</h2>
@@ -121,6 +128,7 @@ export default function Home() {
           {reasons.map((reason) => (
             <ReasonBlock key={reason.id} reason={reason} />
           ))}
+          <ReasonBlock reason={lovedByThousands} className="lp-proof" />
         </div>
 
         <section className="lp-offer" aria-labelledby="offer-heading">
