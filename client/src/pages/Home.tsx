@@ -148,7 +148,6 @@ export default function Home() {
             ))}
           </ul>
 
-          <p className="lp-deal">{offer.deal}</p>
           <Cta label={offer.cta} className="lp-cta-lg" />
           <p className="lp-guarantee">{offer.guarantee}</p>
         </section>

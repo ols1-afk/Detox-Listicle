@@ -113,7 +113,6 @@ describe("DetoxMe listicle landing page", () => {
     expect(container.querySelectorAll(".lp-badges li")).toHaveLength(4);
     expect(screen.getByText("90-Day Guarantee")).toBeTruthy();
     expect(screen.getByText("Try it today with a 90-Day Money Back Guarantee")).toBeTruthy();
-    expect(screen.getByText("Buy 2 Get 1 Free For A Limited Time Only")).toBeTruthy();
   });
 
   it("renders every review with an attributed name and verification badge", () => {

@@ -223,7 +223,6 @@ export const offer = {
     width: 1536,
     height: 1024,
   } as ListicleImage | undefined,
-  deal: "Buy 2 Get 1 Free For A Limited Time Only",
   cta: "Save Up To 40% OFF",
   guarantee: "Try it today with a 90-Day Money Back Guarantee",
 };
