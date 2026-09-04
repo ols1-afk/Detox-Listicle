@@ -41,7 +41,7 @@ export const hero = {
   subheadline: "(Besides Finally Shifting The Belly That Wouldn't Move)",
   body:
     "Doing everything right and the middle still won't budge? Whether the diets stopped working or the weight came straight back after the shots, here's why thousands of women are switching to DetoxMe.",
-  cta: "Save Up To 70% OFF",
+  cta: "Save Up To 40% OFF",
   socialProof: "10,000+ Reviews | 100,000+ Happy Customers",
   image: {
     src: "/images/hero-kitchen.webp",
@@ -224,7 +224,7 @@ export const offer = {
     height: 1024,
   } as ListicleImage | undefined,
   deal: "Buy 2 Get 1 Free For A Limited Time Only",
-  cta: "Save Up To 70% OFF",
+  cta: "Save Up To 40% OFF",
   guarantee: "Try it today with a 90-Day Money Back Guarantee",
 };
 

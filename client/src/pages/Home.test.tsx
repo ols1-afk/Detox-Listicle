@@ -146,6 +146,18 @@ describe("DetoxMe listicle landing page", () => {
     }
   });
 
+  it("advertises one consistent discount across every call to action", () => {
+    const { container } = render(<Home />);
+    const figures = new Set(
+      Array.from(container.querySelectorAll(".lp-cta"))
+        .flatMap((cta) => Array.from((cta.textContent ?? "").matchAll(/(\d+)\s*%/g)))
+        .map((match) => match[1]),
+    );
+
+    // A page offering two different savings figures undercuts both.
+    expect(Array.from(figures)).toEqual(["40"]);
+  });
+
   it("keeps the required regulatory disclaimer on the page", () => {
     render(<Home />);
 
