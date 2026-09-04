@@ -171,6 +171,12 @@ export const reasons: Reason[] = [
     eyebrow: "The Results",
     number: "07",
     headline: "Results That Matter",
+    image: {
+      src: "/images/results.webp",
+      alt: "A bottle of DetoxMe High Absorption Chitosan surrounded by before and after photographs from four customers, each showing a reduction around the midsection.",
+      width: 1254,
+      height: 1254,
+    },
     body: [
       "Removing obesogens before they can absorb means fewer new fat cells, proper burning of existing stored fat and less cravings for unnecessary calories.",
       "So the stubborn pooch finally shifts, the excess arm and thigh fat drops and you no longer find yourself in the pantry at 11pm.",
